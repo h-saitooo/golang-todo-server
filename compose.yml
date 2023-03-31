@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  application:
+    image: golang:1.20-alpine
+    depends_on:
+      - database
+
+  database:
+    image: mysql:8.0.32-debian
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: true
+
